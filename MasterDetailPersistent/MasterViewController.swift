@@ -9,22 +9,40 @@
 import UIKit
 
 class MasterViewController: UITableViewController {
+    
+    // MARK: properties
 
-    var detailViewController: DetailViewController? = nil
+    /*var detailViewController: DetailViewController? = nil*/
+    
     var objects = [AnyObject]()
+    
+    var filePath : String {
+        let manager = NSFileManager.defaultManager()
+        let url = manager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
+        return url.URLByAppendingPathComponent("objectArray").path!
+    }
 
-
+    // MARK: lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         self.navigationItem.rightBarButtonItem = addButton
-        if let split = self.splitViewController {
+
+        /*if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
+        }*/
+        
+        // - ios persistence - get saved objects array
+        if let array = NSKeyedUnarchiver.unarchiveObjectWithFile(filePath) as? [AnyObject] {
+            objects = array
         }
+    
+    
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -32,20 +50,18 @@ class MasterViewController: UITableViewController {
         super.viewWillAppear(animated)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     func insertNewObject(sender: AnyObject) {
         objects.insert(NSDate(), atIndex: 0)
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        
+        // - ios persistence - save the objects array
+        NSKeyedArchiver.archiveRootObject(objects, toFile: filePath)
     }
 
     // MARK: - Segues
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    /*override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 let object = objects[indexPath.row] as! NSDate
@@ -53,6 +69,15 @@ class MasterViewController: UITableViewController {
                 controller.detailItem = object
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
                 controller.navigationItem.leftItemsSupplementBackButton = true
+            }
+        }
+    }*/
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetail" {
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                let object = objects[indexPath.row] as! NSDate
+                (segue.destinationViewController as! DetailViewController).detailItem = object
             }
         }
     }
