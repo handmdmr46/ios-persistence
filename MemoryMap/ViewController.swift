@@ -12,11 +12,7 @@ import MapKit
 /**
 *  This View Controller displays a map. If the user changes
 *  the map region (the center and the zoom level), then the
-*  app persists the change. How does it work?
-*
-*  (In order to include the MapKit classes, the app needs to be
-*   congifured. Click on the "MemoryMap" icon in the navigator,
-*   then the "Capabilities" tab. Notice that "Maps" is turned on)
+*  app persists the change
 */
 
 class ViewController: UIViewController, MKMapViewDelegate {
@@ -27,7 +23,6 @@ class ViewController: UIViewController, MKMapViewDelegate {
     
     var filePath : String {
         let manager = NSFileManager.defaultManager()
-        //let url = manager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first as! NSURL
         let url = manager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
         return url.URLByAppendingPathComponent("mapRegionArchive").path!
     }
@@ -52,7 +47,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
             "longitudeDelta" : mapView.region.span.longitudeDelta
         ]
         
-        // Archive the dictionary into the filePath
+        // archive the dictionary into the filePath
         NSKeyedArchiver.archiveRootObject(dictionary, toFile: filePath)
     }
     
