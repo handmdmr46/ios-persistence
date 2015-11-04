@@ -149,7 +149,7 @@ class TheMovieDB : NSObject {
     }
     
     /*
-    ** shared date formatter
+    ** shared date formatter returns "yyy-mm-dd" date format
     */
     class var sharedDateFormatter: NSDateFormatter  {
         
