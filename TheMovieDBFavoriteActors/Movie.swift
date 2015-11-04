@@ -6,7 +6,7 @@
 //  Copyright © 2015 martin hand. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Movie {
     
@@ -19,7 +19,21 @@ class Movie {
     var title = ""
     var id = 0
     var posterPath : String? = nil
-    var releaseDate : String? = nil
+    var releaseDate : NSDate? = nil
+    
+    /**
+    posterImage is a computed property.
+    image cache stores the images into the documents directory
+    */
+    var posterImage : UIImage? {
+        get {
+            return TheMovieDB.Caches.imageCache.imageWithIdentifier(posterPath)
+        }
+        
+        set {
+            TheMovieDB.Caches.imageCache.storeImage(newValue, withIdentifier: posterPath!)
+        }
+    }
     
     init(dictionary: [String : AnyObject]) {
         title = dictionary[Keys.Title] as! String
@@ -27,14 +41,7 @@ class Movie {
         posterPath = dictionary[Keys.PosterPath] as? String
         
         if let releaseDateString = dictionary[Keys.ReleaseDate] as? String {
-            //releaseDate = TheMovieDB.sharedDateFormatter.dateFromString(releaseDateString)
+            releaseDate = TheMovieDB.sharedDateFormatter.dateFromString(releaseDateString)
         }
     }
-    
-    /**
-    posterImage is a computed property.
-    image cache stores the images into the documents directory
-    */
-    
-    
 }

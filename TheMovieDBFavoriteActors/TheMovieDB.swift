@@ -171,8 +171,8 @@ class TheMovieDB : NSObject {
     ** shared image cache
     */
     struct Caches {
-        //static let imageCache = ImageCache()
-        static let imageCache = print("imageCache() not available yet plaes build ImageCache class martin hand")
+        static let imageCache = ImageCache()
+//        static let imageCache = print("imageCache() not available yet plaes build ImageCache class martin hand")
     }
         
     
