@@ -18,6 +18,7 @@
 		A911AA421BEA5A250077A5BD /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A911AA411BEA5A250077A5BD /* Person.swift */; settings = {ASSET_TAGS = (); }; };
 		A911AA441BEA5BD40077A5BD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A911AA431BEA5BD40077A5BD /* Config.swift */; settings = {ASSET_TAGS = (); }; };
 		A911AA461BEAF19F0077A5BD /* TheMovieDBConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A911AA451BEAF19F0077A5BD /* TheMovieDBConvenience.swift */; settings = {ASSET_TAGS = (); }; };
+		A911AA4A1BEBACAC0077A5BD /* ActorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A911AA491BEBACAC0077A5BD /* ActorPickerViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		A911AA411BEA5A250077A5BD /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		A911AA431BEA5BD40077A5BD /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		A911AA451BEAF19F0077A5BD /* TheMovieDBConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheMovieDBConvenience.swift; sourceTree = "<group>"; };
+		A911AA491BEBACAC0077A5BD /* ActorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		A911AA351BE9C9D80077A5BD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A911AA491BEBACAC0077A5BD /* ActorPickerViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -87,12 +90,12 @@
 		A911AA361BE9C9E10077A5BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A911AA371BE9CA8C0077A5BD /* TheMovieDBConstants.swift */,
-				A911AA391BE9CAEF0077A5BD /* TheMovieDB.swift */,
 				A911AA3D1BE9D33C0077A5BD /* Movie.swift */,
-				A911AA3F1BE9DF610077A5BD /* ImageCache.swift */,
 				A911AA411BEA5A250077A5BD /* Person.swift */,
 				A911AA431BEA5BD40077A5BD /* Config.swift */,
+				A911AA3F1BE9DF610077A5BD /* ImageCache.swift */,
+				A911AA391BE9CAEF0077A5BD /* TheMovieDB.swift */,
+				A911AA371BE9CA8C0077A5BD /* TheMovieDBConstants.swift */,
 				A911AA451BEAF19F0077A5BD /* TheMovieDBConvenience.swift */,
 			);
 			name = Model;
@@ -173,6 +176,7 @@
 				A911AA401BE9DF610077A5BD /* ImageCache.swift in Sources */,
 				A911AA461BEAF19F0077A5BD /* TheMovieDBConvenience.swift in Sources */,
 				A911AA381BE9CA8C0077A5BD /* TheMovieDBConstants.swift in Sources */,
+				A911AA4A1BEBACAC0077A5BD /* ActorPickerViewController.swift in Sources */,
 				A911AA441BEA5BD40077A5BD /* Config.swift in Sources */,
 				A911AA241BE9C8CA0077A5BD /* AppDelegate.swift in Sources */,
 				A911AA3E1BE9D33C0077A5BD /* Movie.swift in Sources */,
