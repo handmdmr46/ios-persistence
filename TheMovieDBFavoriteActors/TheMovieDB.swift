@@ -10,10 +10,12 @@ import Foundation
 
 class TheMovieDB : NSObject {
     
-    // this is kinda cool but why are we using this only once? seems un-necessary
+    // this is kinda cool but why are we using this only once? seems un-necessary, okay it's used 2X's
     typealias CompletionHandler = (result: AnyObject!, error: NSError?) -> Void
     
     var session : NSURLSession
+    
+    var config = Config.unarchiverInstance() ?? Config()
     
     override init() {
         session = NSURLSession.sharedSession()
