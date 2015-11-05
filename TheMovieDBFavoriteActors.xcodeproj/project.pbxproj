@@ -21,6 +21,8 @@
 		A911AA4A1BEBACAC0077A5BD /* ActorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A911AA491BEBACAC0077A5BD /* ActorPickerViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A911AA4C1BEBB6240077A5BD /* ActorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A911AA4B1BEBB6240077A5BD /* ActorTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		A911AA4E1BEBB69A0077A5BD /* TaskCancelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A911AA4D1BEBB69A0077A5BD /* TaskCancelTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		A911AA501BEBC0140077A5BD /* FavoriteActorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A911AA4F1BEBC0140077A5BD /* FavoriteActorViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A911AA521BEBC4250077A5BD /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A911AA511BEBC4250077A5BD /* MovieListViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		A911AA491BEBACAC0077A5BD /* ActorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorPickerViewController.swift; sourceTree = "<group>"; };
 		A911AA4B1BEBB6240077A5BD /* ActorTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActorTableViewCell.swift; sourceTree = "<group>"; };
 		A911AA4D1BEBB69A0077A5BD /* TaskCancelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCancelTableViewCell.swift; sourceTree = "<group>"; };
+		A911AA4F1BEBC0140077A5BD /* FavoriteActorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteActorViewController.swift; sourceTree = "<group>"; };
+		A911AA511BEBC4250077A5BD /* MovieListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,8 @@
 				A911AA491BEBACAC0077A5BD /* ActorPickerViewController.swift */,
 				A911AA4B1BEBB6240077A5BD /* ActorTableViewCell.swift */,
 				A911AA4D1BEBB69A0077A5BD /* TaskCancelTableViewCell.swift */,
+				A911AA4F1BEBC0140077A5BD /* FavoriteActorViewController.swift */,
+				A911AA511BEBC4250077A5BD /* MovieListViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -178,8 +184,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A911AA501BEBC0140077A5BD /* FavoriteActorViewController.swift in Sources */,
 				A911AA421BEA5A250077A5BD /* Person.swift in Sources */,
 				A911AA401BE9DF610077A5BD /* ImageCache.swift in Sources */,
+				A911AA521BEBC4250077A5BD /* MovieListViewController.swift in Sources */,
 				A911AA461BEAF19F0077A5BD /* TheMovieDBConvenience.swift in Sources */,
 				A911AA4C1BEBB6240077A5BD /* ActorTableViewCell.swift in Sources */,
 				A911AA381BE9CA8C0077A5BD /* TheMovieDBConstants.swift in Sources */,
