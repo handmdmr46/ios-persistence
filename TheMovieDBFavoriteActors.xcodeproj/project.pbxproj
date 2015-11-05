@@ -17,6 +17,7 @@
 		A911AA401BE9DF610077A5BD /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A911AA3F1BE9DF610077A5BD /* ImageCache.swift */; settings = {ASSET_TAGS = (); }; };
 		A911AA421BEA5A250077A5BD /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A911AA411BEA5A250077A5BD /* Person.swift */; settings = {ASSET_TAGS = (); }; };
 		A911AA441BEA5BD40077A5BD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A911AA431BEA5BD40077A5BD /* Config.swift */; settings = {ASSET_TAGS = (); }; };
+		A911AA461BEAF19F0077A5BD /* TheMovieDBConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A911AA451BEAF19F0077A5BD /* TheMovieDBConvenience.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		A911AA3F1BE9DF610077A5BD /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		A911AA411BEA5A250077A5BD /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		A911AA431BEA5BD40077A5BD /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		A911AA451BEAF19F0077A5BD /* TheMovieDBConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheMovieDBConvenience.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				A911AA3F1BE9DF610077A5BD /* ImageCache.swift */,
 				A911AA411BEA5A250077A5BD /* Person.swift */,
 				A911AA431BEA5BD40077A5BD /* Config.swift */,
+				A911AA451BEAF19F0077A5BD /* TheMovieDBConvenience.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 			files = (
 				A911AA421BEA5A250077A5BD /* Person.swift in Sources */,
 				A911AA401BE9DF610077A5BD /* ImageCache.swift in Sources */,
+				A911AA461BEAF19F0077A5BD /* TheMovieDBConvenience.swift in Sources */,
 				A911AA381BE9CA8C0077A5BD /* TheMovieDBConstants.swift in Sources */,
 				A911AA441BEA5BD40077A5BD /* Config.swift in Sources */,
 				A911AA241BE9C8CA0077A5BD /* AppDelegate.swift in Sources */,
