@@ -14,6 +14,15 @@ class FavoriteActorViewController : UITableViewController, ActorPickerViewContro
     
     var actors = [Person]()
     
+    // MARK: persistence - save the favorite actors array
+    
+    var actorArrayURL : NSURL {
+        let filename = "favoriteActorsArray"
+        let documentsDirectoryURL : NSURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
+        
+        return documentsDirectoryURL.URLByAppendingPathComponent(filename)
+    }
+    
     // MARK: life cycle
     
     override func viewDidLoad() {
@@ -68,7 +77,31 @@ class FavoriteActorViewController : UITableViewController, ActorPickerViewContro
             cell.actorImageView.image = localImage
         } else if actor.imagePath == "" {
             cell.actorImageView.image = UIImage(named: "personNoImage")
+        } else {
+            /* If the above cases don't work, then download the image */
+            
+            cell.actorImageView.image = UIImage(named: "personPlaceholder")
+            
+            let size = TheMovieDB.sharedInstance().config.profileSizes[1]
+            let task = TheMovieDB.sharedInstance().taskForImageWithSize(size, filePath: actor.imagePath, completionHandler: { (data, error) in
+                
+                if let error = error {
+                    print("Image Path error: \(error.localizedDescription)")
+                }
+                
+                if let data = data {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        let image = UIImage(data: data)
+                        actor.image = image
+                        cell.actorImageView.image = image
+                    })
+                }
+            })
+           
+            cell.taskToCancelCellIfReused = task
         }
+        
+        return cell
     }
     
     override func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
@@ -78,8 +111,12 @@ class FavoriteActorViewController : UITableViewController, ActorPickerViewContro
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        <#code#>
+        switch (editingStyle) {
+        case .Delete:
+            actors.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        default:
+            break
+        }
     }
-    
-    // MARK: persistence - save the favorite actors array
 }

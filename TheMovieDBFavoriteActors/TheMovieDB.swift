@@ -62,6 +62,31 @@ class TheMovieDB : NSObject {
         return task
     }
     
+    // MARK: task method for images
+    
+    func taskForImageWithSize(size: String, filePath: String, completionHandler: (imageData: NSData?, error: NSError?) -> Void) -> NSURLSessionTask {
+        
+        let baseURL = NSURL(string: config.secureBaseImageURLString)!
+        let url = baseURL.URLByAppendingPathComponent(size).URLByAppendingPathComponent(filePath)
+        
+        print(url)
+        
+        let request = NSURLRequest(URL: url)
+        
+        let task = session.dataTaskWithRequest(request) { (data,response, error) in
+            
+            if let error = error {
+                let newError = TheMovieDB.errorForData(data, response: response, error: error)
+                completionHandler(imageData: nil, error: newError)
+            } else {
+                completionHandler(imageData: data, error: nil)
+            }
+        }
+        
+        task.resume()
+        return task
+    }
+    
     // MARK: helper functions
     
     
